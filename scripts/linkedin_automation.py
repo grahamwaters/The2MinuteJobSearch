@@ -51,7 +51,7 @@ def login(secrets):
     time.sleep(random.randint(4, 7)) # sleep for 4 to 7 seconds
     detect_confirm_button(driver) # if the confirm button is present, click it
     time.sleep(random.randint(1, 5)) # sleep for 4 to 7 seconds
-    return
+    return driver
 
 
 #* Action Function for LinkedIn
@@ -100,7 +100,11 @@ def fill_lamp_list():
 
 
 def process_flow():
-
+    """
+    process_flow is the main function that runs the process flow
+    :return: None
+    :rtype: None
+    """
     print("Starting the process flow")
     # load your credentials from secrets.json in the config folder
     with open('./config/secrets.json', encoding = 'utf-8') as f:
@@ -112,17 +116,26 @@ def process_flow():
     my_companies = ["ibm","google","apple"]
 
     print('Preferences have been loaded.')
-    login(secrets)
+    driver = login(secrets)
     print("Logged in to LinkedIn, you should see your main feed now.")
-    continue_flag = input("y/n: should I continue? ")
+    # continue_flag = input("y/n: should I continue? ")
+    continue_flag = 'y' # for now, we will assume the user wants to continue
     if continue_flag == 'y':
         print("Continuing the process flow")
     else:
         print("Exiting the process flow")
         return
 
+    # load the url patterns in config/url_patterns.json
+    with open('./config/url_patterns.json', encoding = 'utf-8') as f:
+        url_patterns = json.load(f)
+    print('URL patterns have been loaded.')
+
+
+
+
     # create the lamp_df dataframe
-    # lamp_df = pd.DataFrame(columns=['name','title','company','location','url'])
+    lamp_df = pd.DataFrame(columns=['name','title','company','location','url'])
     print('I have cleared out a storage room for our files. It was dusty in there!')
     # get the list of companies to target
     # lamp_list = get_prefs()
@@ -130,7 +143,21 @@ def process_flow():
     print(f' Your chosen companies are: {my_companies}')
     print('Looking for the hiring managers of these companies for you to connect with.')
     # loop through the companies in the list
-    lamp_df = harvest(my_companies)
+    # each url follows the company_hiring_manager_pattern pattern in the config file (url_patterns.json)
+    pattern_url = url_patterns['company_hiring_manager_pattern']
+    for company in my_companies:
+        print(f' -- Company: {company} --')
+        company_url = pattern_url.format(str(company).lower()) # create the url for the company
+        print(f'Company URL: {company_url}')
+        print(f'Company Name: {company}')
+        # harvest the data for the company
+        lamp_df = harvest(pattern_url,lamp_df,driver)
+        print(f' -- Completed harvesting for {company} --')
+        # sleep for a random amount of time
+        time.sleep(random.randint(1,3)) # sleep for a random amount of time
+    print(' -- Completed harvesting for all companies --')
+    # saving the dataframe to a csv file
+    lamp_df.to_csv('./data/lamp_df.csv',index=False)
     return lamp_df
 
 

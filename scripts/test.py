@@ -117,13 +117,8 @@ class LinkedInParser(object): # class for parsing
     """docstring for LinkedInParser"""
     def __init__(self, login, password):
         """ Start up... """
-
-        # get login credentials from secrets.json
-        # with open('./config/secrets.json', encoding = 'utf-8') as f:
-        #     secrets = json.load(f)
-        #     self.username = secrets['username']
-        #     self.password = secrets['password']
-
+        self.login = login
+        self.password = password
         self.logged_in = False
         self.opener = None
         self.cookie_jar = None
@@ -193,7 +188,7 @@ class LinkedInParser(object): # class for parsing
         soup = self.loadSoup("https://www.linkedin.com/")
         csrf = soup.find(id="loginCsrfParam-login")['value']
         login_data = urllib.parse.urlencode({
-            'session_key': self.username,
+            'session_key': self.login,
             'session_password': self.password,
             'loginCsrfParam': csrf,
         }).encode('utf8')

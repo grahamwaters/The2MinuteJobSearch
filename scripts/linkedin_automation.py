@@ -55,16 +55,19 @@ def login(secrets):
 
 
 #* Action Function for LinkedIn
-
+# @limit(1, 60) # limit the function to 1 call per 60 seconds
 def harvest(company_url,lamp_df,driver):
     # we are logged in to LinkedIn at this point
     # get the company page
+    css_tag1 = 'driver.find_elements_by_css_selector("#main > div.org-grid__content-height-enforcer > div > div.artdeco-card.pb2 > div.display-flex.full-width.justify-space-between.align-items-center.pt5.ph5")[0].get_attribute'
     driver.get(company_url) # get the company page
     # wait for the people you may know section to load
-    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".org-people-profiles-module__profile-list")))
+    WebDriverWait(driver, 90).until(EC.presence_of_element_located((By.CLASS_NAME,"org-grid__content-height-enforcer")))
+    time.sleep(5) # sleep for 5 seconds
     # get the list of people you may know
     people_you_may_know = driver.find_elements_by_css_selector(".org-people-profiles-module__profile-list") # get the list of people you may know
     # these elements are not clickable, so we need to get the url from the href attribute
+    driver.find_elements_by_css_selector("#main > div.org-grid__content-height-enforcer > div > div.artdeco-card.pb2 > div.display-flex.full-width.justify-space-between.align-items-center.pt5.ph5")[0].get_attribute('href')
     # get the list of urls for the people you may know
     people_you_may_know_urls = [person.find_element_by_css_selector("a").get_attribute("href") for person in people_you_may_know]
     # get the list of names for the people you may know
@@ -151,7 +154,7 @@ def process_flow():
         print(f'Company URL: {company_url}')
         print(f'Company Name: {company}')
         # harvest the data for the company
-        lamp_df = harvest(pattern_url,lamp_df,driver)
+        lamp_df = harvest(company_url,lamp_df,driver)
         print(f' -- Completed harvesting for {company} --')
         # sleep for a random amount of time
         time.sleep(random.randint(1,3)) # sleep for a random amount of time
@@ -165,5 +168,4 @@ def main():
     lamp_df = process_flow() # run the process flow
     return lamp_df
 if __name__ == '__main__':
-
     main()

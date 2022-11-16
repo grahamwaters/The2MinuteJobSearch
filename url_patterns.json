@@ -1,0 +1,4 @@
+{
+    company_hiring_manager_pattern : "https://www.linkedin.com/company/{}/people/?keywords=hiring%20manager",
+    company_hiring_manager_n_degree_pattern : "https://www.linkedin.com/company/{}/people/?facetNetwork={}&keywords=hiring%20manager"
+}

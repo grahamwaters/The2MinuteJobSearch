@@ -22,6 +22,7 @@ This repository contains a Python implementation of the method using Pandas.
   - [Stage Four: Follow-up](#stage-four-follow-up)
 - [The LAMP List Generator](#the-lamp-list-generator)
 - [The LAMP List](#the-lamp-list)
+  - [Global Variables](#global-variables)
   - [User-Provided Information](#user-provided-information)
   - [Programmatically Generated Information](#programmatically-generated-information)
 - [Process Flow Logic](#process-flow-logic)
@@ -58,7 +59,6 @@ git clone
 2. Generate your LAMP List. This list will contain all of the companies you want to work for. You can use the LAMP List Generator to generate your list.
 
 ## How to Begin Your Job Search
-
 Let's start by creating a pandas dataframe that matches the template Dalton provides. This is included in this repo's data folder and is named 'template_dalton.xlsx'. We will use this template to create our own dataframe.
 
 ![figure 1](images/fig1.png)
@@ -181,6 +181,15 @@ Once the data for the section has been gathered from the user, the LAMP List Gen
 # The LAMP List
 
 So, what is the lamp list? You (the user) define your top 10 companies that you want to work for. The LAMP List Generator will then generate a LAMP List for you. The LAMP List will contain the following information:
+
+## Global Variables
+```python
+linkedin_hiring_managersearch_pattern = f"https://www.linkedin.com/search/results/people/?facetCurrentCompany=%5B%22{company_id}%22%5D&facetGeoRegion=%5B%22us%3A0%22%5D&keywords={hiring_manager_name}&origin=FACETED_SEARCH"
+
+# could also be as shown below
+pattern_2 = f'https://www.linkedin.com/company/{company_name}/people/?keywords=hiring%20manager'
+
+```
 
 ## User-Provided Information
 1. Company Name

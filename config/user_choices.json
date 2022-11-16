@@ -1,5 +1,5 @@
 {
-    "companies": [],
+    "companies": ["ibm","google","apple"],
     "email_templates": [],
     "message_templates": [],
     "connections": [],

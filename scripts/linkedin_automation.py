@@ -1,15 +1,21 @@
 # connect python with webbrowser-chrome
 # source: https://www.geeksforgeeks.org/automate-linkedin-connections-using-python/
+import json
+import time # to control how fast the browser executes the code
+import random
+import os
+import pandas as pd
 
 from selenium import webdriver
 # import waiting till element is present in the page functionality
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import json
-import time # to control how fast the browser executes the code
-import random
-import pandas as pd
-import os
+# import By
+from selenium.webdriver.common.by import By
+# import Keys
+from selenium.webdriver.common.keys import Keys
+
+
 
 def detect_confirm_button(driver):
     try:
@@ -76,31 +82,37 @@ def harvest(company_url,lamp_df,driver):
     # return the dataframe
     return lamp_df
 
-def get_prefs():
+def fill_lamp_list():
     # get the top 10 companies from the populated lamp_list list.
-    if os.exists('./data/lamp_list.csv'):
+    # check if the lamp_list file exists
+    if os.path.exists('./data/lamp_list.csv'): # check if the file exists
         lamp_list = pd.read_csv('./data/lamp_list.csv')
         lamp_list = lamp_list.head(10)
-    else:
+    else: # if the file does not exist, create it
         print('Time to choose some companies to target!')
         # ask the user to choose some companies to target, one by one
         while len(lamp_list) != 10:
-            company = input('Enter a company name: ')
-            lamp_list.append(company)
+            company = input(f'{len(lamp_list)}. Enter a company name: ')
+            lamp_list.append(company) # add the company to the list
         # save the list to a csv file
         lamp_list.to_csv('./data/lamp_list.csv',index=False)
     return lamp_list
 
 
 def process_flow():
+
     print("Starting the process flow")
     # load your credentials from secrets.json in the config folder
     with open('./config/secrets.json', encoding = 'utf-8') as f:
         secrets = json.load(f)
-    print(f'Secrets have been loaded.')
-    # login to LinkedIn using the credentials
+    print('Secrets have been loaded.')
+    print('User preferences have been loaded.')
+
+    # load the list of companies to target (eventually)
+    my_companies = ["ibm","google","apple"]
+
+    print('Preferences have been loaded.')
     login(secrets)
-    #& load the user's
     print("Logged in to LinkedIn, you should see your main feed now.")
     continue_flag = input("y/n: should I continue? ")
     if continue_flag == 'y':
@@ -110,14 +122,21 @@ def process_flow():
         return
 
     # create the lamp_df dataframe
-    lamp_df = pd.DataFrame(columns=['name','title','company','location','url'])
-    print(f'I have cleared out a storage room for our files. It was dusty in there!')
-
-    print(f' -- Stage 1: Harvesting --')
+    # lamp_df = pd.DataFrame(columns=['name','title','company','location','url'])
+    print('I have cleared out a storage room for our files. It was dusty in there!')
+    # get the list of companies to target
+    # lamp_list = get_prefs()
+    print(' -- Stage 1: Harvesting --')
     print(f' Your chosen companies are: {my_companies}')
-    print(f'Looking for the hiring managers of these companies for you to connect with.')
-    # get the list of hiring managers for each company
-    lamp_df = harvest(companies)
+    print('Looking for the hiring managers of these companies for you to connect with.')
+    # loop through the companies in the list
+    lamp_df = harvest(my_companies)
+    return lamp_df
 
 
-process_flow() # run the process flow
+def main():
+    lamp_df = process_flow() # run the process flow
+    return lamp_df
+if __name__ == '__main__':
+
+    main()

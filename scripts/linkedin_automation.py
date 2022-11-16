@@ -14,8 +14,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 # import Keys
 from selenium.webdriver.common.keys import Keys
+from selenium.common.exceptions import NoSuchElementException, ElementClickInterceptedException
 
-
+connect_mode = False
 
 def detect_confirm_button(driver):
     try:
@@ -155,20 +156,92 @@ def harvest(company_url,lamp_df,driver,url_patterns):
 
     driver.find_elements_by_css_selector("#main > div.org-grid__content-height-enforcer > div > div.artdeco-card.pb2 > div.display-flex.full-width.justify-space-between.align-items-center.pt5.ph5")[0].get_attribute('href')
     # get the list of urls for the people you may know
-    people_you_may_know_urls = [person.find_element_by_css_selector("a").get_attribute("href") for person in people_you_may_know]
-    # get the list of names for the people you may know
-    people_you_may_know_names = [person.find_element_by_css_selector("a").get_attribute("aria-label") for person in people_you_may_know]
-    # get the list of titles for the people you may know
-    people_you_may_know_titles = [person.find_element_by_css_selector(".org-people-profile-card__profile-title").text for person in people_you_may_know]
-    # get the list of companies for the people you may know
-    people_you_may_know_companies = [person.find_element_by_css_selector(".org-people-profile-card__profile-subtitle").text for person in people_you_may_know]
-    # get the list of locations for the people you may know
-    people_you_may_know_locations = [person.find_element_by_css_selector(".org-people-profile-card__profile-location").text for person in people_you_may_know]
-    # create a dataframe for the people you may know
-    lamp_df = pd.DataFrame({'name':people_you_may_know_names,'title':people_you_may_know_titles,'company':people_you_may_know_companies,'location':people_you_may_know_locations,'url':people_you_may_know_urls})
+    people_you_may_know_urls = [person.get_attribute('href') for person in people_you_may_know] # get the list of urls for the people you may know
     # save the dataframe to a csv file in the data folder
     lamp_df.to_csv(f'./data/{company_url.split("/")[-1]}_people_you_may_know.csv',index=False)
+
+
+    # while the url still contains the company name, keep gathering information while the user navigates the website. Follow anyone with a follow button and collect all names and urls.
+
+    # while the url still contains the company name, keep gathering information while the user navigates the website. Follow anyone with a follow button and collect all names and urls.
+    # print('Watching for new people to follow, have fun exploring the website! Let me do the work for you.')
+    print('Sit back and relax, watch my magic as I follow people for you!')
+    headless_mode = False # set to True to run in headless mode
+    total_follows = 0 # keep track of the total number of follows
+    while company_url in driver.current_url:
+        # get the list of people you may know
+
+        inner_command = random.choice(scroll_options)
+        driver.execute_script(inner_command)
+        # wait to load the page
+        # sleep a random number of seconds to emulate human behavior (between 1 and 3 seconds)
+        time.sleep(random.randint(1, 9))
+        # get the height of the page
+        # last_height = driver.execute_script("return document.body.scrollHeight")
+
+        # if this_height != last_height:
+        #     last_scroll_time = time.time()
+        #     this_height = last_height
+        #     headless_mode = False # if the user has moved the page, then we are no longer in headless mode
+        iterations = 0 # keep track of the number of iterations to prevent infinite loops
+
+        people = driver.find_elements_by_css_selector(".org-people-profile-card__profile-title.t-black.t-bold")
+        # get the buttons on the page to click
+        button_class = url_patterns['buttons']
+        # check the inner text of the button to see if it is "Connect"/"Message" or "Follow" or "Pending"
+        # find follow buttons by the text "Follow"
+        follow_buttons = driver.find_elements_by_xpath("//*[text()='Follow']")
+        # find connect buttons by the text "Connect"
+        last_connect_time = time.time() # keep track of the last time you connected to prevent spamming the connect button
+        # loop through the people and connect with them
+        for button in follow_buttons:
+            if button.text == "Follow":
+                try:
+                    button.click()
+                    time.sleep(random.randint(1, 3))
+                    # detect the confirm button and click it
+                    # detect_confirm_button(driver)
+                    print('Followed a new person!') # print a message to the user
+                    time.sleep(random.randint(1, 3))
+                    total_follows += 1 # increment the total number of follows
+                except ElementClickInterceptedException:
+                    pass
+
+            elif button.text == "Connect" and connect_mode == True: # if the button says "Connect" then we only click it if we have not clicked more than 3 times in the last 5 minutes
+                # get the current time
+                current_time = time.time()
+                # check if the current time is within 5 minutes of the last time we clicked the connect button
+                if current_time - last_connect_time > 300:
+                    try:
+                        button.click()
+                        time.sleep(random.randint(1, 3))
+                        # detect the confirm button and click it
+                        print('Connected with a new person!') # print a message to the user
+                        # print(f'Connected with user: {}'.format('username'))
+                        detect_confirm_button(driver)
+                        time.sleep(random.randint(1, random.randint(3, 5)))
+                        # update the last_connect_time
+                        last_connect_time = current_time
+                    except ElementClickInterceptedException:
+                        pass
+                else:
+                    continue
+            elif button.text == "Message":
+                pass
+            elif button.text == "Pending":
+                pass
+            else:
+                pass
+        if total_follows > 20 or iterations > 30:
+            print(f'Total follows: {total_follows} is greater than 20. Moving to next Company.')
+            total_follows = 0
+            break
+        time.sleep(random.randint(5,15))
     # return the dataframe
+
+
+
+
     return lamp_df
 
 def fill_lamp_list():
@@ -202,7 +275,8 @@ def process_flow():
     print('User preferences have been loaded.')
 
     # load the list of companies to target (eventually)
-    my_companies = ["ibm","google","apple"]
+    my_companies = ["ibm","google","apple","microsoft","facebook","amazon","netflix","tesla","nvidia","intel",'oracle','openteams','meta','linkedin','twitter','theboringcompany']
+
 
     print('Preferences have been loaded.')
     driver = login(secrets)
@@ -235,15 +309,20 @@ def process_flow():
     # each url follows the company_hiring_manager_pattern pattern in the config file (url_patterns.json)
     pattern_url = url_patterns['company_hiring_manager_pattern']
     for company in my_companies:
-        print(f' -- Company: {company} --')
-        company_url = pattern_url.format(str(company).lower()) # create the url for the company
-        print(f'Company URL: {company_url}')
-        print(f'Company Name: {company}')
-        # harvest the data for the company and update the lamp_df dataframe
-        lamp_df = harvest(driver,company_url,lamp_df,url_patterns)
-        print(f' -- Completed harvesting for {company} --')
-        # sleep for a random amount of time
-        time.sleep(random.randint(1,3)) # sleep for a random amount of time
+        try:
+            print(f' -- Company: {company} --')
+            company_url = pattern_url.format(str(company).lower()) # create the url for the company
+            print(f'Company URL: {company_url}')
+            print(f'Company Name: {company}')
+            # harvest the data for the company and update the lamp_df dataframe
+            #company_url,lamp_df,driver,url_patterns
+            lamp_df = harvest(company_url=company_url,driver = driver,lamp_df=lamp_df,url_patterns=url_patterns)
+            print(f' -- Completed harvesting for {company} --')
+            # sleep for a random amount of time
+            time.sleep(random.randint(1,3)) # sleep for a random amount of time
+        except Exception as e:
+            print(f'Error: {e}')
+            continue
     print(' -- Completed harvesting for all companies --')
     # saving the dataframe to a csv file
     lamp_df.to_csv('./data/lamp_df.csv',index=False)

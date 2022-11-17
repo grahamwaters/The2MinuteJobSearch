@@ -1,8 +1,0 @@
-{
-    usernames_css_selector : '',
-    userblock_div_css_sel : "li.grid:nth-child(1) > div:nth-child(1)",
-    user_li_class : "grid grid__col--lg-8 pt5 pr4 m0 block",
-    user_tile_button_css : "#ember246", // this is the button that connects to the user
-    user_tile_button_css_sel : "li.grid:nth-child(1) > div:nth-child(1) > div:nth-child(1) > button:nth-child(1)",
-
-}

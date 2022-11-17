@@ -1,7 +1,7 @@
 {
     "company_hiring_manager_pattern" : "https://www.linkedin.com/company/{}/people/?keywords=hiring%20manager",
     "company_recruiting_manager_pattern" : "https://www.linkedin.com/search/results/people/?keywords={}%20recruiting%20manager",
-    "data_scientists" : "https://www.linkedin.com/company/ibm/people/?keywords=data%20science",
+    "data_scientists" : "https://www.linkedin.com/company/{}/people/?keywords=data%20science",
     "company_hiring_manager_n_degree_pattern" : "https://www.linkedin.com/company/{}/people/?facetNetwork={}&keywords=hiring%20manager",
     "austin_company":"https://www.linkedin.com/company/{}/people/?keywords=austin",
     "linkedin_url2": "https://www.linkedin.com/search/results/people/?origin=COMPANY_PAGE_CANNED_SEARCH&amp;network=%5B%22F%22%5D&amp;currentCompany=%5B%221283%22%5D&amp;page={}",
@@ -9,5 +9,15 @@
     "entity_on_page_class" : "entity-result__item",
     "entity_block_class" : "artdeco-card artdeco-card--with-hover ember-view full-width org-people-profile-card",
     "entity_name_class" : "org-people-profile-card__profile-title t-black lt-line-clamp lt-line-clamp--single-line ember-view",
-    "buttons" : "artdeco-button artdeco-button--2 artdeco-button--secondary ember-view full-width"
+    "buttons" : "artdeco-button artdeco-button--2 artdeco-button--secondary ember-view full-width",
+    "follow_if_this_text_onprofile" : ["Data for Good",
+                                    "Data Science",
+                                    "AI for good",
+                                    "Hiring Manager",
+                                    "Recruiting Manager",
+                                    "Reinforcement Learning",
+                                    "Machine Learning Research",
+                                    "Computer Vision",
+                                    "Natural Language Processing",
+                                    "Austin Texas"]
 }

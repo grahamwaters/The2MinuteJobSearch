@@ -65,9 +65,10 @@ def login(secrets):
 
 # * Action Function for LinkedIn
 # @limit(1, 60) # limit the function to 1 call per 60 seconds
-def harvest(company_url, lamp_df, driver, url_patterns):
+def harvest(company_url, lamp_df, driver, url_patterns, company_name="", group_name="", list_name = ""):
     # we are logged in to LinkedIn at this point
     # get the company page
+
     """
     harvest the company page for the company_url provided and update the lamp_df dataframe with the results, which should be the information for the hiring managers at the company as listed on the company page (company_url).
 
@@ -84,12 +85,15 @@ def harvest(company_url, lamp_df, driver, url_patterns):
 
     # scrolling options for random choice
     scroll_options = [
-        "window.scrollTo(0, document.body.scrollHeight/2);",
-        "window.scrollTo(0, document.body.scrollHeight/4);",
         "window.scrollTo(0, document.body.scrollHeight);",
     ]
+    steady_scroll = ["window.scrollTo(0, document.body.scrollHeight/8);"]
 
-    # & go to the company page
+    if group_name != "":
+        company_url = group_name # if the company_url is a group, use the group name instead (which is a url)
+    elif list_name != "":
+        company_url = list_name # if the company_url is a list, use the list name instead (which is a url)
+    # & go to the required page
     driver.get(company_url)  # get the company page
     # wait for the people you may know section to load
     WebDriverWait(driver, 90).until(
@@ -191,7 +195,7 @@ def harvest(company_url, lamp_df, driver, url_patterns):
     ]  # get the list of urls for the people you may know
     # save the dataframe to a csv file in the data folder
     lamp_df.to_csv(
-        f'./data/{company_url.split("/")[-1]}_people_you_may_know.csv', index=False
+        f'./data/lamp_df_v1.csv', index=False
     )
 
     # while the url still contains the company name, keep gathering information while the user navigates the website. Follow anyone with a follow button and collect all names and urls.
@@ -201,7 +205,7 @@ def harvest(company_url, lamp_df, driver, url_patterns):
     print("Sit back and relax, watch my magic as I follow people for you!")
     headless_mode = False  # set to True to run in headless mode
     total_follows = 0  # keep track of the total number of follows
-    while company_url in driver.current_url:
+    while company_name in driver.current_url:
         # get the list of people you may know
 
         inner_command = random.choice(scroll_options)
@@ -240,7 +244,12 @@ def harvest(company_url, lamp_df, driver, url_patterns):
                     time.sleep(random.randint(1, 3))
                     # detect the confirm button and click it
                     # detect_confirm_button(driver)
-                    print("Followed a new person!")  # print a message to the user
+                    print("Followed a new person!",end=' ')  # print a message to the user
+                    # get the person's information
+                    try:
+                        lamp_df = get_more_details(driver, lamp_df, company_name)
+                    except Exception as error:
+                        print(error)
                     time.sleep(random.randint(1, 3))
                     total_follows += 1  # increment the total number of follows
                 except ElementClickInterceptedException:
@@ -281,10 +290,72 @@ def harvest(company_url, lamp_df, driver, url_patterns):
             )
             total_follows = 0
             break
-        time.sleep(random.randint(15, 60))
+        time.sleep(random.randint(2, 10))
     # return the dataframe
 
     return lamp_df
+
+
+def get_more_details(driver, lamp_df, company_name):
+    """
+    get_more_details is a function that gets more details about the people you may know.
+
+    on this page there are many <li > elements with the class "grid grid__col--lg-8 pt5 pr4 m0 block" each of which contains a user's information.
+        # we want to get the inner text of each of these elements and save it to a dictionary with the key being the name of the person and the value being that user's name and position and url. We will save this dictionary to a csv file.
+        # get the list of <li> elements
+
+    :param driver: _description_
+    :type driver: _type_
+    :param lamp_df: _description_
+    :type lamp_df: _type_
+    :param company_name: _description_
+    :type company_name: _type_
+    :return: _description_
+    :rtype: _type_
+    """
+    li_elements = driver.find_elements_by_css_selector(
+        ".grid.grid__col--lg-8.pt5.pr4.m0.block"
+    )
+    # loop through the list of <li> elements
+    for li in li_elements:
+        # get the text of the <li> element
+        li_text = li.text
+        # split the text by the new line character
+        li_text = li_text.split("\n")
+        # get the name of the person
+        name = li_text[0]
+        # get the position of the person
+        position = li_text[1]
+        # get the url of the person
+        url = li.find_element_by_css_selector("a").get_attribute("href")
+        # add the person to the dataframe if they are not already in the dataframe
+        if name not in lamp_df["name"].values:
+            # add using concat to avoid SettingWithCopyWarning
+            lamp_df = pd.concat(
+                [
+                    lamp_df,
+                    pd.DataFrame(
+                        {
+                            "name": [name],
+                            "position": [position],
+                            "url": [url],
+                            "company": [company_name]
+                        }
+                    ),
+                ]
+            )
+            print(f' {name} a {position} at {company_name}')
+
+
+    # save the dataframe to a csv file in the data folder
+    lamp_df.to_csv(
+        f'./data/lamp_df.csv', index=False
+    )
+
+    # return the dataframe
+
+    return lamp_df
+
 
 
 def fill_lamp_list():
@@ -326,15 +397,24 @@ def process_flow():
         "facebook",
         "amazon",
         "netflix",
-        "tesla",
         "nvidia",
         "intel",
         "oracle",
         "openteams",
         "meta",
-        "linkedin",
+        "crowdstrike",
         "twitter",
-        "theboringcompany",
+        "tesla-motors",
+        "uber",
+        "lyft",
+        "airbnb",
+        "palo-alto-networks",
+    ]
+    my_groups = [
+        "https://www.linkedin.com/groups/961087/"
+    ]
+    my_lists = [
+        "https://www.linkedin.com/search/results/COMPANIES/?companyHqGeo=%5B%22104472865%22%2C%2290000064%22%5D&industryCompanyVertical=%5B%221594%22%2C%226%22%2C%224%22%5D&keywords=python&origin=FACETED_SEARCH&sid=tyE"
     ]
 
     print("Preferences have been loaded.")
@@ -382,6 +462,7 @@ def process_flow():
                 driver=driver,
                 lamp_df=lamp_df,
                 url_patterns=url_patterns,
+                company_name = company
             )
             print(f" -- Completed harvesting for {company} --")
             # sleep for a random amount of time
@@ -391,7 +472,7 @@ def process_flow():
             continue
 
     print(" -- Stage 2: Austin Section --")
-
+    temp_df = lamp_df.copy()
     pattern_url = url_patterns["austin_company"]
     for company in my_companies:
         try:
@@ -408,6 +489,7 @@ def process_flow():
                 driver=driver,
                 lamp_df=lamp_df,
                 url_patterns=url_patterns,
+                company_name = company
             )
             print(f" -- Completed harvesting for {company} --")
             # sleep for a random amount of time
@@ -416,7 +498,7 @@ def process_flow():
             print(f"Error: {e}")
             continue
 
-    print(" -- Stage 3: San Francisco Section --")
+    print(" -- Stage 3: Data Scientist Section --")
 
     pattern_url = url_patterns["data_scientists"]
     for company in my_companies:
@@ -434,6 +516,7 @@ def process_flow():
                 driver=driver,
                 lamp_df=lamp_df,
                 url_patterns=url_patterns,
+                company_name = company
             )
             print(f" -- Completed harvesting for {company} --")
             # sleep for a random amount of time
@@ -441,11 +524,87 @@ def process_flow():
         except Exception as e:
             print(f"Error: {e}")
             continue
+
+    # update the temp_df with the new data
+    temp_df = temp_df.append(lamp_df)
+    # remove duplicates
+    lamp_df = temp_df.drop_duplicates()
+    # reset the index
+    lamp_df = lamp_df.reset_index(drop=True)
+
+    print(f' -- Stage 4: Groups --')
+    temp_df = lamp_df.copy()
+    # go to the group pages and harvest the data from there
+    for group in my_groups:
+        try:
+            print(f' -- Group: {group} --')
+            # harvest the data for the group and update the lamp_df dataframe
+            lamp_df = harvest(
+                company_url=group,
+                driver=driver,
+                lamp_df=lamp_df,
+                url_patterns=url_patterns,
+                group_name = group
+            )
+            print(f' -- Completed harvesting for {group} --')
+            # sleep for a random amount of time
+            time.sleep(random.randint(1, 3))  # sleep for a random amount of time
+        except Exception as e:
+            print(f'Error: {e}')
+            continue
     print(" -- Completed harvesting for all companies --")
     # saving the dataframe to a csv file
-    lamp_df.to_csv("./data/lamp_df.csv", index=False)
-    return lamp_df
 
+    # update the temp_df with the new data
+    temp_df = temp_df.append(lamp_df)
+    # remove duplicates
+    lamp_df = temp_df.drop_duplicates()
+    # reset the index
+    lamp_df = lamp_df.reset_index(drop=True)
+
+    lamp_df.to_csv("./data/lamp_df.csv", index=False)
+    print(" -- Saved the dataframe to a csv file --")
+    # update the temp_df with the new data
+    temp_df = temp_df.append(lamp_df)
+    # remove duplicates
+    lamp_df = temp_df.drop_duplicates()
+    # reset the index
+    lamp_df = lamp_df.reset_index(drop=True)
+
+    print(" -- Stage 5: Lists --")
+    temp_df = lamp_df.copy()
+    # go to the list pages and harvest the data from there
+    for list in my_lists:
+        try:
+            print(f' -- List: {list} --')
+            # harvest the data for the list and update the lamp_df dataframe
+            lamp_df = harvest(
+                company_url=list,
+                driver=driver,
+                lamp_df=lamp_df,
+                url_patterns=url_patterns,
+                list_name = list
+            )
+            print(f' -- Completed harvesting for {list} --')
+            # sleep for a random amount of time
+            time.sleep(random.randint(1, 3))  # sleep for a random amount of time
+        except Exception as e:
+            print(f'Error: {e}')
+            continue
+    print(" -- Completed harvesting for all companies, groups, and lists --")
+    # saving the dataframe to a csv file
+    lamp_df.to_csv("./data/full_lamp_df.csv", index=False)
+
+    # update the temp_df with the new data
+    temp_df = temp_df.append(lamp_df)
+    # remove duplicates
+    lamp_df = temp_df.drop_duplicates()
+    # reset the index
+    lamp_df = lamp_df.reset_index(drop=True)
+
+
+
+    return lamp_df
 
 def main():
     lamp_df = process_flow()  # run the process flow
@@ -454,3 +613,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+#follow_if_this_text_onprofile

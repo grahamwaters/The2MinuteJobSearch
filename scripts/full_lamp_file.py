@@ -19,11 +19,11 @@ from selenium.webdriver.common.alert import Alert
 # to force a page to show all pages of results instead of just 10 per page (default), you can edit the html of the page and add the attribute "data-page-size="1000" to the table tag
 
 # load the config file
-with open('config.json') as f:
+with open("config.json") as f:
     config = json.load(f)
 
-#import patterns from url_patterns.json
-with open('url_patterns.json') as f:
+# import patterns from url_patterns.json
+with open("url_patterns.json") as f:
     url_patterns = json.load(f)
     # the available opetions for degree codes are:
     #'F' for first degree,
@@ -31,9 +31,9 @@ with open('url_patterns.json') as f:
     #'T': for third degree,
     # these are added to the url pattern:company_hiring_manager_n_degree_pattern to get the url for the hiring managers n degree from the user's profile
 # set the city and state
-city = config['city']
-state = config['state']
-country = config['country']
+city = config["city"]
+state = config["state"]
+country = config["country"]
 
 
 # def mile_one():
@@ -136,11 +136,13 @@ country = config['country']
 #     hiring_manager_emails = driver.find_elements_by_xpath("//div[@class='email']") # get the hiring manager emails. These are not the actual emails. They are just the first part of the email. We will have to get the rest of the email from the hiring manager page.
 
 
-def harvest(company_url,lamp_df):
+def harvest(company_url, lamp_df):
 
     # request the company url as html with requests and beautiful soup
-    company_url_html = requests.get(company_url).text # request the company url as html
-    soup = BeautifulSoup(company_url_html, 'html.parser') # parse the html with beautiful soup
+    company_url_html = requests.get(company_url).text  # request the company url as html
+    soup = BeautifulSoup(
+        company_url_html, "html.parser"
+    )  # parse the html with beautiful soup
 
     # use the patterns to get the hiring manager names and emails
     # linkedin_url2 pattern in url_patterns.json is useful for finding recruiting managers
@@ -149,8 +151,6 @@ def harvest(company_url,lamp_df):
     # looks for people at the company provided with  .format(company name) that are 1st or 2nd degree connections of the user.
 
     # using
-
-
 
     return lamp_df
 

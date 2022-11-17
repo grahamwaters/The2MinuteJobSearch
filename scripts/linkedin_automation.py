@@ -349,7 +349,7 @@ def get_more_details(driver, lamp_df, company_name):
 
     # save the dataframe to a csv file in the data folder
     lamp_df.to_csv(
-        f'./data/lamp_df.csv', index=False
+        f'./data/{company_name}/lamp_df.csv', index=False
     )
 
     # return the dataframe
@@ -371,7 +371,7 @@ def fill_lamp_list():
             company = input(f"{len(lamp_list)}. Enter a company name: ")
             lamp_list.append(company)  # add the company to the list
         # save the list to a csv file
-        lamp_list.to_csv("./data/lamp_list.csv", index=False)
+        lamp_list.to_csv("./data/{company_name}/lamp_list.csv", index=False)
     return lamp_list
 
 
@@ -562,7 +562,7 @@ def process_flow():
     # reset the index
     lamp_df = lamp_df.reset_index(drop=True)
 
-    lamp_df.to_csv("./data/lamp_df.csv", index=False)
+    lamp_df.to_csv("./data/{company_name}/lamp_df.csv", index=False)
     print(" -- Saved the dataframe to a csv file --")
     # update the temp_df with the new data
     temp_df = temp_df.append(lamp_df)
@@ -593,7 +593,7 @@ def process_flow():
             continue
     print(" -- Completed harvesting for all companies, groups, and lists --")
     # saving the dataframe to a csv file
-    lamp_df.to_csv("./data/full_lamp_df.csv", index=False)
+    lamp_df.to_csv("./data/{company_name}/full_lamp_df.csv", index=False)
 
     # update the temp_df with the new data
     temp_df = temp_df.append(lamp_df)

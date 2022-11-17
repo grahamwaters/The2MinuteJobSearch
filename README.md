@@ -39,6 +39,9 @@ This repository contains a Python implementation of the method using Pandas.
 
 ## Getting Started
 
+You need to be aware of one thing most of all. LinkedIn has a very low tolerance for ANY bot activity on its platform. This has been a common complaint of users for many years. Despite the ruling in the Supreme Court that deems scraping of public data legal, LinkedIn has been very aggressive in shutting down accounts that are suspected of bot activity. Please use this code respectfully and with caution. It is meant to be a companion tool, not an automatic bot that will do all the work for you. That should be the work of a human.
+
+
 ---
 
 ### Prerequisites

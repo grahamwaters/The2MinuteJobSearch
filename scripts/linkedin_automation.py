@@ -63,6 +63,10 @@ def login(secrets):
     return driver
 
 
+
+
+
+
 # * Action Function for LinkedIn
 # @limit(1, 60) # limit the function to 1 call per 60 seconds
 def harvest(company_url, lamp_df, driver, url_patterns, company_name="", group_name="", list_name = ""):

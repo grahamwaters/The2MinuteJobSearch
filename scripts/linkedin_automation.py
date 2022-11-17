@@ -293,6 +293,8 @@ def harvest(company_url, lamp_df, driver, url_patterns, company_name="", group_n
             )
             total_follows = 0
             break
+        else:
+            iterations += 1
         time.sleep(random.randint(2, 10))
     # return the dataframe
 

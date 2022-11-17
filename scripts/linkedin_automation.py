@@ -194,6 +194,9 @@ def harvest(company_url, lamp_df, driver, url_patterns, company_name="", group_n
         person.get_attribute("href") for person in people_you_may_know
     ]  # get the list of urls for the people you may know
     # save the dataframe to a csv file in the data folder
+    # make a directory for the csv files for the company name if it doesn't exist
+    if not os.path.exists(f"./csv_files/{company_name}"):
+        os.makedirs(f"./csv_files/{company_name}")
     lamp_df.to_csv(
         f'./data/lamp_df_v1.csv', index=False
     )
@@ -345,7 +348,9 @@ def get_more_details(driver, lamp_df, company_name):
                 ]
             )
             print(f' {name} a {position} at {company_name}')
-
+    # make a directory for the csv files for the company name if it doesn't exist
+    if not os.path.exists(f"./csv_files/{company_name}"):
+        os.makedirs(f"./csv_files/{company_name}")
 
     # save the dataframe to a csv file in the data folder
     lamp_df.to_csv(
@@ -360,9 +365,12 @@ def get_more_details(driver, lamp_df, company_name):
 
 def fill_lamp_list():
     # get the top 10 companies from the populated lamp_list list.
+    # make a directory for the csv files for the company name if it doesn't exist
+    if not os.path.exists(f"./csv_files/{company_name}"):
+        os.makedirs(f"./csv_files/{company_name}")
     # check if the lamp_list file exists
-    if os.path.exists("./data/lamp_list.csv"):  # check if the file exists
-        lamp_list = pd.read_csv("./data/lamp_list.csv")
+    if os.path.exists("./data/{company_name}/lamp_list.csv"):  # check if the file exists
+        lamp_list = pd.read_csv("./data/{company_name}/lamp_list.csv")
         lamp_list = lamp_list.head(10)
     else:  # if the file does not exist, create it
         print("Time to choose some companies to target!")
@@ -562,6 +570,9 @@ def process_flow():
     # reset the index
     lamp_df = lamp_df.reset_index(drop=True)
 
+    # make a directory for the csv files for the company name if it doesn't exist
+    if not os.path.exists(f"./csv_files/{company_name}"):
+        os.makedirs(f"./csv_files/{company_name}")
     lamp_df.to_csv("./data/{company_name}/lamp_df.csv", index=False)
     print(" -- Saved the dataframe to a csv file --")
     # update the temp_df with the new data
@@ -593,6 +604,9 @@ def process_flow():
             continue
     print(" -- Completed harvesting for all companies, groups, and lists --")
     # saving the dataframe to a csv file
+    # make a directory for the csv files for the company name if it doesn't exist
+    if not os.path.exists(f"./csv_files/{company_name}"):
+        os.makedirs(f"./csv_files/{company_name}")
     lamp_df.to_csv("./data/{company_name}/full_lamp_df.csv", index=False)
 
     # update the temp_df with the new data

@@ -195,8 +195,8 @@ def harvest(company_url, lamp_df, driver, url_patterns, company_name="", group_n
     ]  # get the list of urls for the people you may know
     # save the dataframe to a csv file in the data folder
     # make a directory for the csv files for the company name if it doesn't exist
-    if not os.path.exists(f"./csv_files/{company_name}"):
-        os.makedirs(f"./csv_files/{company_name}")
+    if not os.path.exists(f"./data/{company_name}"):
+        os.makedirs(f"./data/{company_name}")
     lamp_df.to_csv(
         f'./data/lamp_df_v1.csv', index=False
     )
@@ -349,8 +349,8 @@ def get_more_details(driver, lamp_df, company_name):
             )
             print(f' {name} a {position} at {company_name}')
     # make a directory for the csv files for the company name if it doesn't exist
-    if not os.path.exists(f"./csv_files/{company_name}"):
-        os.makedirs(f"./csv_files/{company_name}")
+    if not os.path.exists(f"./data/{company_name}"):
+        os.makedirs(f"./data/{company_name}")
 
     # save the dataframe to a csv file in the data folder
     lamp_df.to_csv(
@@ -363,24 +363,24 @@ def get_more_details(driver, lamp_df, company_name):
 
 
 
-def fill_lamp_list():
-    # get the top 10 companies from the populated lamp_list list.
-    # make a directory for the csv files for the company name if it doesn't exist
-    if not os.path.exists(f"./csv_files/{company_name}"):
-        os.makedirs(f"./csv_files/{company_name}")
-    # check if the lamp_list file exists
-    if os.path.exists("./data/{company_name}/lamp_list.csv"):  # check if the file exists
-        lamp_list = pd.read_csv("./data/{company_name}/lamp_list.csv")
-        lamp_list = lamp_list.head(10)
-    else:  # if the file does not exist, create it
-        print("Time to choose some companies to target!")
-        # ask the user to choose some companies to target, one by one
-        while len(lamp_list) != 10:
-            company = input(f"{len(lamp_list)}. Enter a company name: ")
-            lamp_list.append(company)  # add the company to the list
-        # save the list to a csv file
-        lamp_list.to_csv("./data/{company_name}/lamp_list.csv", index=False)
-    return lamp_list
+# def fill_lamp_list(company_name):
+#     # get the top 10 companies from the populated lamp_list list.
+#     # make a directory for the csv files for the company name if it doesn't exist
+#     if not os.path.exists(f"./data/{company_name}"):
+#         os.makedirs(f"./data/{company_name}")
+#     # check if the lamp_list file exists
+#     if os.path.exists("./data/{company_name}/lamp_list.csv"):  # check if the file exists
+#         lamp_list = pd.read_csv("./data/{company_name}/lamp_list.csv")
+#         lamp_list = lamp_list.head(10)
+#     else:  # if the file does not exist, create it
+#         print("Time to choose some companies to target!")
+#         # ask the user to choose some companies to target, one by one
+#         while len(lamp_list) != 10:
+#             company = input(f"{len(lamp_list)}. Enter a company name: ")
+#             lamp_list.append(company)  # add the company to the list
+#         # save the list to a csv file
+#         lamp_list.to_csv("./data/{company_name}/lamp_list.csv", index=False)
+#     return lamp_list
 
 
 def process_flow():
@@ -477,7 +477,7 @@ def process_flow():
             time.sleep(random.randint(1, 3))  # sleep for a random amount of time
         except Exception as e:
             print(f"Error: {e}")
-            continue
+            pass
 
     print(" -- Stage 2: Austin Section --")
     temp_df = lamp_df.copy()
@@ -504,7 +504,7 @@ def process_flow():
             time.sleep(random.randint(1, 3))  # sleep for a random amount of time
         except Exception as e:
             print(f"Error: {e}")
-            continue
+            pass
 
     print(" -- Stage 3: Data Scientist Section --")
 
@@ -531,7 +531,7 @@ def process_flow():
             time.sleep(random.randint(1, 3))  # sleep for a random amount of time
         except Exception as e:
             print(f"Error: {e}")
-            continue
+            pass
 
     # update the temp_df with the new data
     temp_df = temp_df.append(lamp_df)
@@ -559,7 +559,7 @@ def process_flow():
             time.sleep(random.randint(1, 3))  # sleep for a random amount of time
         except Exception as e:
             print(f'Error: {e}')
-            continue
+            pass
     print(" -- Completed harvesting for all companies --")
     # saving the dataframe to a csv file
 
@@ -571,8 +571,8 @@ def process_flow():
     lamp_df = lamp_df.reset_index(drop=True)
 
     # make a directory for the csv files for the company name if it doesn't exist
-    if not os.path.exists(f"./csv_files/{company_name}"):
-        os.makedirs(f"./csv_files/{company_name}")
+    if not os.path.exists(f"./data/{company_name}"):
+        os.makedirs(f"./data/{company_name}")
     lamp_df.to_csv("./data/{company_name}/lamp_df.csv", index=False)
     print(" -- Saved the dataframe to a csv file --")
     # update the temp_df with the new data
@@ -601,12 +601,12 @@ def process_flow():
             time.sleep(random.randint(1, 3))  # sleep for a random amount of time
         except Exception as e:
             print(f'Error: {e}')
-            continue
+            pass
     print(" -- Completed harvesting for all companies, groups, and lists --")
     # saving the dataframe to a csv file
     # make a directory for the csv files for the company name if it doesn't exist
-    if not os.path.exists(f"./csv_files/{company_name}"):
-        os.makedirs(f"./csv_files/{company_name}")
+    if not os.path.exists(f"./data/{company_name}"):
+        os.makedirs(f"./data/{company_name}")
     lamp_df.to_csv("./data/{company_name}/full_lamp_df.csv", index=False)
 
     # update the temp_df with the new data

@@ -1,1 +1,4 @@
-/resources
+# hide any file with secret in the name
+find . -name "*secret*" -exec mv {} .secret \;
+resources
+.gitignore

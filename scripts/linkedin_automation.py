@@ -75,7 +75,7 @@ def harvest(company_url,lamp_df,driver,url_patterns):
     # css_tag1 = 'driver.find_elements_by_css_selector("#main > div.org-grid__content-height-enforcer > div > div.artdeco-card.pb2 > div.display-flex.full-width.justify-space-between.align-items-center.pt5.ph5")[0].get_attribute'
 
     # scrolling options for random choice
-    scroll_options = ["window.scrollTo(0, document.body.scrollHeight/2);","window.scrollTo(0, document.body.scrollHeight/4);","window.scrollTo(0, document.body.scrollHeight/4*3);","window.scrollTo(0, document.body.scrollHeight);"]
+    scroll_options = ["window.scrollTo(0, document.body.scrollHeight/2);","window.scrollTo(0, document.body.scrollHeight/4);","window.scrollTo(0, document.body.scrollHeight);"]
 
     #& go to the company page
     driver.get(company_url) # get the company page
@@ -236,7 +236,7 @@ def harvest(company_url,lamp_df,driver,url_patterns):
             print(f'Total follows: {total_follows} is greater than 20. Moving to next Company.')
             total_follows = 0
             break
-        time.sleep(random.randint(5,15))
+        time.sleep(random.randint(15,60))
     # return the dataframe
 
 
@@ -307,7 +307,48 @@ def process_flow():
     print('Looking for the hiring managers of these companies for you to connect with.')
     # loop through the companies in the list
     # each url follows the company_hiring_manager_pattern pattern in the config file (url_patterns.json)
+    #shuffle the list of companies
+    random.shuffle(my_companies)
+    # my_companies = shuffled_companies
     pattern_url = url_patterns['company_hiring_manager_pattern']
+    for company in my_companies:
+        try:
+            print(f' -- Company: {company} --')
+            company_url = pattern_url.format(str(company).lower()) # create the url for the company
+            print(f'Company URL: {company_url}')
+            print(f'Company Name: {company}')
+            # harvest the data for the company and update the lamp_df dataframe
+            #company_url,lamp_df,driver,url_patterns
+            lamp_df = harvest(company_url=company_url,driver = driver,lamp_df=lamp_df,url_patterns=url_patterns)
+            print(f' -- Completed harvesting for {company} --')
+            # sleep for a random amount of time
+            time.sleep(random.randint(1,3)) # sleep for a random amount of time
+        except Exception as e:
+            print(f'Error: {e}')
+            continue
+
+    print(' -- Stage 2: Austin Section --')
+
+    pattern_url = url_patterns['austin_company']
+    for company in my_companies:
+        try:
+            print(f' -- Company: {company} --')
+            company_url = pattern_url.format(str(company).lower()) # create the url for the company
+            print(f'Company URL: {company_url}')
+            print(f'Company Name: {company}')
+            # harvest the data for the company and update the lamp_df dataframe
+            #company_url,lamp_df,driver,url_patterns
+            lamp_df = harvest(company_url=company_url,driver = driver,lamp_df=lamp_df,url_patterns=url_patterns)
+            print(f' -- Completed harvesting for {company} --')
+            # sleep for a random amount of time
+            time.sleep(random.randint(1,3)) # sleep for a random amount of time
+        except Exception as e:
+            print(f'Error: {e}')
+            continue
+
+    print(' -- Stage 3: San Francisco Section --')
+
+    pattern_url = url_patterns['data_scientists']
     for company in my_companies:
         try:
             print(f' -- Company: {company} --')
@@ -332,5 +373,6 @@ def process_flow():
 def main():
     lamp_df = process_flow() # run the process flow
     return lamp_df
+
 if __name__ == '__main__':
     main()

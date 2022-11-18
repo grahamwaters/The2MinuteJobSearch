@@ -1,0 +1,486 @@
+[
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "Keys",
+        "importPath": "selenium.webdriver.common.keys",
+        "description": "selenium.webdriver.common.keys",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.keys",
+        "documentation": {}
+    },
+    {
+        "label": "Options",
+        "importPath": "selenium.webdriver.chrome.options",
+        "description": "selenium.webdriver.chrome.options",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.chrome.options",
+        "documentation": {}
+    },
+    {
+        "label": "WebDriverWait",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "Select",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "WebDriverWait",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "expected_conditions",
+        "importPath": "selenium.webdriver.support",
+        "description": "selenium.webdriver.support",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support",
+        "documentation": {}
+    },
+    {
+        "label": "expected_conditions",
+        "importPath": "selenium.webdriver.support",
+        "description": "selenium.webdriver.support",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "ActionChains",
+        "importPath": "selenium.webdriver.common.action_chains",
+        "description": "selenium.webdriver.common.action_chains",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.action_chains",
+        "documentation": {}
+    },
+    {
+        "label": "DesiredCapabilities",
+        "importPath": "selenium.webdriver.common.desired_capabilities",
+        "description": "selenium.webdriver.common.desired_capabilities",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.desired_capabilities",
+        "documentation": {}
+    },
+    {
+        "label": "Proxy",
+        "importPath": "selenium.webdriver.common.proxy",
+        "description": "selenium.webdriver.common.proxy",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.proxy",
+        "documentation": {}
+    },
+    {
+        "label": "ProxyType",
+        "importPath": "selenium.webdriver.common.proxy",
+        "description": "selenium.webdriver.common.proxy",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.proxy",
+        "documentation": {}
+    },
+    {
+        "label": "Alert",
+        "importPath": "selenium.webdriver.common.alert",
+        "description": "selenium.webdriver.common.alert",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.alert",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "ElementClickInterceptedException",
+        "importPath": "selenium.common.exceptions",
+        "description": "selenium.common.exceptions",
+        "isExtraImport": true,
+        "detail": "selenium.common.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "http.cookiejar",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "http.cookiejar",
+        "description": "http.cookiejar",
+        "detail": "http.cookiejar",
+        "documentation": {}
+    },
+    {
+        "label": "urllib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib",
+        "description": "urllib",
+        "detail": "urllib",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "string",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "string",
+        "description": "string",
+        "detail": "string",
+        "documentation": {}
+    },
+    {
+        "label": "urllib.request",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.request",
+        "description": "urllib.request",
+        "detail": "urllib.request",
+        "documentation": {}
+    },
+    {
+        "label": "httplib2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "httplib2",
+        "description": "httplib2",
+        "detail": "httplib2",
+        "documentation": {}
+    },
+    {
+        "label": "traceback",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "traceback",
+        "description": "traceback",
+        "detail": "traceback",
+        "documentation": {}
+    },
+    {
+        "label": "harvest",
+        "kind": 2,
+        "importPath": "archived_files.full_lamp_file",
+        "description": "archived_files.full_lamp_file",
+        "peekOfCode": "def harvest(company_url, lamp_df):\n    # request the company url as html with requests and beautiful soup\n    company_url_html = requests.get(company_url).text  # request the company url as html\n    soup = BeautifulSoup(\n        company_url_html, \"html.parser\"\n    )  # parse the html with beautiful soup\n    # use the patterns to get the hiring manager names and emails\n    # linkedin_url2 pattern in url_patterns.json is useful for finding recruiting managers\n    # targeted_search_linkedin_001 - explaining this pattern.\n    # looks for people at the company provided with  .format(company name) that are 1st or 2nd degree connections of the user.",
+        "detail": "archived_files.full_lamp_file",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "archived_files.full_lamp_file",
+        "description": "archived_files.full_lamp_file",
+        "peekOfCode": "def main():\n    return",
+        "detail": "archived_files.full_lamp_file",
+        "documentation": {}
+    },
+    {
+        "label": "city",
+        "kind": 5,
+        "importPath": "archived_files.full_lamp_file",
+        "description": "archived_files.full_lamp_file",
+        "peekOfCode": "city = config[\"city\"]\nstate = config[\"state\"]\ncountry = config[\"country\"]\n# def mile_one():\n#     #* The Process Journey for each Company\n#     #& Mile One: Getting started with the hiring managers with selenium and python\n#     # Now we begin\n#     # We will be using selenium to automate the process of getting the hiring managers\n#     # We will be using python to write the code\n#     # We will be using chrome to run the code",
+        "detail": "archived_files.full_lamp_file",
+        "documentation": {}
+    },
+    {
+        "label": "state",
+        "kind": 5,
+        "importPath": "archived_files.full_lamp_file",
+        "description": "archived_files.full_lamp_file",
+        "peekOfCode": "state = config[\"state\"]\ncountry = config[\"country\"]\n# def mile_one():\n#     #* The Process Journey for each Company\n#     #& Mile One: Getting started with the hiring managers with selenium and python\n#     # Now we begin\n#     # We will be using selenium to automate the process of getting the hiring managers\n#     # We will be using python to write the code\n#     # We will be using chrome to run the code\n#     # We will be using the chrome driver to run the code",
+        "detail": "archived_files.full_lamp_file",
+        "documentation": {}
+    },
+    {
+        "label": "country",
+        "kind": 5,
+        "importPath": "archived_files.full_lamp_file",
+        "description": "archived_files.full_lamp_file",
+        "peekOfCode": "country = config[\"country\"]\n# def mile_one():\n#     #* The Process Journey for each Company\n#     #& Mile One: Getting started with the hiring managers with selenium and python\n#     # Now we begin\n#     # We will be using selenium to automate the process of getting the hiring managers\n#     # We will be using python to write the code\n#     # We will be using chrome to run the code\n#     # We will be using the chrome driver to run the code\n#     # global variables and constants",
+        "detail": "archived_files.full_lamp_file",
+        "documentation": {}
+    },
+    {
+        "label": "detect_confirm_button",
+        "kind": 2,
+        "importPath": "archived_files.linkedin_automation",
+        "description": "archived_files.linkedin_automation",
+        "peekOfCode": "def detect_confirm_button(driver):\n    try:\n        # detect the confirm button and click it\n        driver.find_element_by_css_selector(\n            \".artdeco-modal__confirm-dialog-btn\"\n        ).click()\n        return True\n    except:\n        return False\ndef login(secrets):",
+        "detail": "archived_files.linkedin_automation",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "archived_files.linkedin_automation",
+        "description": "archived_files.linkedin_automation",
+        "peekOfCode": "def login(secrets):\n    # login to LinkedIn\n    driver = webdriver.Chrome()\n    # Login to LinkedIn\n    driver.get(\"https://www.linkedin.com/login\")\n    time.sleep(random.randint(1, 3))  # sleep for 1 to 3 seconds\n    # Getting the login element\n    username = driver.find_element_by_css_selector(\"#username\")\n    # retrieve the username from secrets.json\n    username_cred = secrets[\"username\"]",
+        "detail": "archived_files.linkedin_automation",
+        "documentation": {}
+    },
+    {
+        "label": "harvest",
+        "kind": 2,
+        "importPath": "archived_files.linkedin_automation",
+        "description": "archived_files.linkedin_automation",
+        "peekOfCode": "def harvest(company_url, lamp_df, driver, url_patterns, company_name=\"\", group_name=\"\", list_name = \"\"):\n    # we are logged in to LinkedIn at this point\n    # get the company page\n    \"\"\"\n    harvest the company page for the company_url provided and update the lamp_df dataframe with the results, which should be the information for the hiring managers at the company as listed on the company page (company_url).\n    :param company_url: the url for the company page\n    :type company_url: str\n    :param lamp_df: the dataframe to update with the results\n    :type lamp_df: pandas.DataFrame\n    :param driver: the selenium driver",
+        "detail": "archived_files.linkedin_automation",
+        "documentation": {}
+    },
+    {
+        "label": "get_more_details",
+        "kind": 2,
+        "importPath": "archived_files.linkedin_automation",
+        "description": "archived_files.linkedin_automation",
+        "peekOfCode": "def get_more_details(driver, lamp_df, company_name):\n    \"\"\"\n    get_more_details is a function that gets more details about the people you may know.\n    on this page there are many <li > elements with the class \"grid grid__col--lg-8 pt5 pr4 m0 block\" each of which contains a user's information.\n        # we want to get the inner text of each of these elements and save it to a dictionary with the key being the name of the person and the value being that user's name and position and url. We will save this dictionary to a csv file.\n        # get the list of <li> elements\n    :param driver: _description_\n    :type driver: _type_\n    :param lamp_df: _description_\n    :type lamp_df: _type_",
+        "detail": "archived_files.linkedin_automation",
+        "documentation": {}
+    },
+    {
+        "label": "process_flow",
+        "kind": 2,
+        "importPath": "archived_files.linkedin_automation",
+        "description": "archived_files.linkedin_automation",
+        "peekOfCode": "def process_flow():\n    \"\"\"\n    process_flow is the main function that runs the process flow\n    :return: None\n    :rtype: None\n    \"\"\"\n    print(\"Starting the process flow\")\n    # load your credentials from secrets.json in the config folder\n    with open(\"./config/secrets.json\", encoding=\"utf-8\") as f:\n        secrets = json.load(f)",
+        "detail": "archived_files.linkedin_automation",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "archived_files.linkedin_automation",
+        "description": "archived_files.linkedin_automation",
+        "peekOfCode": "def main():\n    lamp_df = process_flow()  # run the process flow\n    return lamp_df\nif __name__ == \"__main__\":\n    main()\n#follow_if_this_text_onprofile",
+        "detail": "archived_files.linkedin_automation",
+        "documentation": {}
+    },
+    {
+        "label": "connect_mode",
+        "kind": 5,
+        "importPath": "archived_files.linkedin_automation",
+        "description": "archived_files.linkedin_automation",
+        "peekOfCode": "connect_mode = False\ndef detect_confirm_button(driver):\n    try:\n        # detect the confirm button and click it\n        driver.find_element_by_css_selector(\n            \".artdeco-modal__confirm-dialog-btn\"\n        ).click()\n        return True\n    except:\n        return False",
+        "detail": "archived_files.linkedin_automation",
+        "documentation": {}
+    },
+    {
+        "label": "LinkedInParser",
+        "kind": 6,
+        "importPath": "archived_files.linkedinparser_classapproach",
+        "description": "archived_files.linkedinparser_classapproach",
+        "peekOfCode": "class LinkedInParser(object):  # class for parsing\n    # docstring\n    \"\"\"docstring for LinkedInParser\"\"\"\n    def __init__(self, login, password):\n        \"\"\"Start up...\"\"\"\n        self.login = login\n        self.password = password\n        self.logged_in = False\n        self.opener = None\n        self.cookie_jar = None",
+        "detail": "archived_files.linkedinparser_classapproach",
+        "documentation": {}
+    },
+    {
+        "label": "copilot_generated_function",
+        "kind": 2,
+        "importPath": "archived_files.linkedinparser_classapproach",
+        "description": "archived_files.linkedinparser_classapproach",
+        "peekOfCode": "def copilot_generated_function():\n    cookie_filename = \"./src/parser.cookies.txt\"\n    # create a cookie jar\n    cookie_jar = cookielib.LWPCookieJar(cookie_filename)\n    # if the cookie file exists, load the cookies into the Cookie Jar\n    if os.path.isfile(cookie_filename):  # if the cookie file exists\n        cookie_jar.load(ignore_discard=True)  # load the cookies from the file\n    # create an opener to open pages using the http protocol and to process cookies.\n    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cookie_jar))\n    # add our headers",
+        "detail": "archived_files.linkedinparser_classapproach",
+        "documentation": {}
+    },
+    {
+        "label": "perform_inner_actions",
+        "kind": 2,
+        "importPath": "archived_files.linkedinparser_classapproach",
+        "description": "archived_files.linkedinparser_classapproach",
+        "peekOfCode": "def perform_inner_actions(url, filename):\n    # now that we have the initial cookies set up, we can access authenticated pages\n    hiring_manager_profiles = []\n    # what have we done in this function?\n    # \"https://www.linkedin.com/feed/\"\n    # read the response\n    # contents = resp.read()\n    # if not os.path.exists('./data'): # if the data folder does not exist\n    #     os.makedirs('./data') # make the data folder\n    # with open('./data/test.html', 'wb') as f: # write the contents to a file",
+        "detail": "archived_files.linkedinparser_classapproach",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "archived_files.linkedinparser_classapproach",
+        "description": "archived_files.linkedinparser_classapproach",
+        "peekOfCode": "def main():  # main function\n    print(\"Beginning Process\")\n    parser = LinkedInParser(\n        username, password\n    )  # username and password are in secrets.json\n    print(\"Logged in\")\n    # * Trying the copilot_generated_function() function\n    copilot_generated_function()\n    # * Trying the copilot_generated_function() above\n    title = parser.loadTitle()  # load the title of the page",
+        "detail": "archived_files.linkedinparser_classapproach",
+        "documentation": {}
+    },
+    {
+        "label": "PLACE_HOLDER_ONE",
+        "kind": 5,
+        "importPath": "scripts.Untitled-1",
+        "description": "scripts.Untitled-1",
+        "peekOfCode": "PLACE_HOLDER_ONE = '[your career trajectory AND/OR experience working at X company AND/OR the culture of X team AND/OR the types of projects you’re working on]'\ninformational_interview_prospect_general = \"\"\"Hi NAME!\nI saw your post about WHATTHEYPOSTEDABOUT. I found this interesting and wanted to reach out. I saw you work at THEIRCOMPANY, and I’d love to learn more about PLACE_HOLDER_ONE. Do you have 15 mins in the next couple weeks to chat?\nThanks!\nNAME\"\"\"\ncoffee_with_career_crushes = \"\"\"Hi NAME!\nMy name is YOURNAME, and I am a YOURJOBTITLE in training. I spoke with a few THEIRCOMPANY staff about the JOBTITLE opening (req.). Do you know who the recruiter for this posting is? if so, I'd love to ask them a few questions.\nThanks so much,\nYOURNAME\"\"\"\nasking_someone_to_connect_you = \"\"\"Hi NAME! I hope everything is going well with you! As you may know, I've been studying TOPIC lately and actively working with projects in the space. I'll soon be job searching and am looking to learn more about the tech field in CITY. I saw that you are connected to THEIRCOMPANY and I'm very interested in that organization. Would you be willing to connect us? I've written an email below that you can copy and paste: EMAIL_TEMPLATE \\n Thanks! \\n YOURNAME\"\"\"",
+        "detail": "scripts.Untitled-1",
+        "documentation": {}
+    },
+    {
+        "label": "informational_interview_prospect_general",
+        "kind": 5,
+        "importPath": "scripts.Untitled-1",
+        "description": "scripts.Untitled-1",
+        "peekOfCode": "informational_interview_prospect_general = \"\"\"Hi NAME!\nI saw your post about WHATTHEYPOSTEDABOUT. I found this interesting and wanted to reach out. I saw you work at THEIRCOMPANY, and I’d love to learn more about PLACE_HOLDER_ONE. Do you have 15 mins in the next couple weeks to chat?\nThanks!\nNAME\"\"\"\ncoffee_with_career_crushes = \"\"\"Hi NAME!\nMy name is YOURNAME, and I am a YOURJOBTITLE in training. I spoke with a few THEIRCOMPANY staff about the JOBTITLE opening (req.). Do you know who the recruiter for this posting is? if so, I'd love to ask them a few questions.\nThanks so much,\nYOURNAME\"\"\"\nasking_someone_to_connect_you = \"\"\"Hi NAME! I hope everything is going well with you! As you may know, I've been studying TOPIC lately and actively working with projects in the space. I'll soon be job searching and am looking to learn more about the tech field in CITY. I saw that you are connected to THEIRCOMPANY and I'm very interested in that organization. Would you be willing to connect us? I've written an email below that you can copy and paste: EMAIL_TEMPLATE \\n Thanks! \\n YOURNAME\"\"\"\ncold_outreach_to_company_director = \"\"\"Hi NAME!\\n My name is YOURNAME and I am an aspiring JOBTITLE. As a longtime user of PRODUCT_YOU_BOTH_USE, I would love to hear about your day-to-day at THEIRCOMPANY and how the pandemic has impacted your research! Would you be free in the next 2 weeks to talk about your experience? Looking forward to connecting!\\n YOURNAME\"\"\"",
+        "detail": "scripts.Untitled-1",
+        "documentation": {}
+    },
+    {
+        "label": "coffee_with_career_crushes",
+        "kind": 5,
+        "importPath": "scripts.Untitled-1",
+        "description": "scripts.Untitled-1",
+        "peekOfCode": "coffee_with_career_crushes = \"\"\"Hi NAME!\nMy name is YOURNAME, and I am a YOURJOBTITLE in training. I spoke with a few THEIRCOMPANY staff about the JOBTITLE opening (req.). Do you know who the recruiter for this posting is? if so, I'd love to ask them a few questions.\nThanks so much,\nYOURNAME\"\"\"\nasking_someone_to_connect_you = \"\"\"Hi NAME! I hope everything is going well with you! As you may know, I've been studying TOPIC lately and actively working with projects in the space. I'll soon be job searching and am looking to learn more about the tech field in CITY. I saw that you are connected to THEIRCOMPANY and I'm very interested in that organization. Would you be willing to connect us? I've written an email below that you can copy and paste: EMAIL_TEMPLATE \\n Thanks! \\n YOURNAME\"\"\"\ncold_outreach_to_company_director = \"\"\"Hi NAME!\\n My name is YOURNAME and I am an aspiring JOBTITLE. As a longtime user of PRODUCT_YOU_BOTH_USE, I would love to hear about your day-to-day at THEIRCOMPANY and how the pandemic has impacted your research! Would you be free in the next 2 weeks to talk about your experience? Looking forward to connecting!\\n YOURNAME\"\"\"\nfollowup_after_event = \"\"\"Hello NAME,\\n It was great to meet you at EVENTNAME. I appreciated your insights into WHATYOUTALKEDABOUT. I would love to continue the conversation. Would you be open to coffee (my treat) or a quick phone call in the next couple of weeks?\\n I look forward to hearing from you!\\n YOURNAME, YOUREMAIL, YOURPHONE, YOURRESUMELINK\"\"\"",
+        "detail": "scripts.Untitled-1",
+        "documentation": {}
+    },
+    {
+        "label": "asking_someone_to_connect_you",
+        "kind": 5,
+        "importPath": "scripts.Untitled-1",
+        "description": "scripts.Untitled-1",
+        "peekOfCode": "asking_someone_to_connect_you = \"\"\"Hi NAME! I hope everything is going well with you! As you may know, I've been studying TOPIC lately and actively working with projects in the space. I'll soon be job searching and am looking to learn more about the tech field in CITY. I saw that you are connected to THEIRCOMPANY and I'm very interested in that organization. Would you be willing to connect us? I've written an email below that you can copy and paste: EMAIL_TEMPLATE \\n Thanks! \\n YOURNAME\"\"\"\ncold_outreach_to_company_director = \"\"\"Hi NAME!\\n My name is YOURNAME and I am an aspiring JOBTITLE. As a longtime user of PRODUCT_YOU_BOTH_USE, I would love to hear about your day-to-day at THEIRCOMPANY and how the pandemic has impacted your research! Would you be free in the next 2 weeks to talk about your experience? Looking forward to connecting!\\n YOURNAME\"\"\"\nfollowup_after_event = \"\"\"Hello NAME,\\n It was great to meet you at EVENTNAME. I appreciated your insights into WHATYOUTALKEDABOUT. I would love to continue the conversation. Would you be open to coffee (my treat) or a quick phone call in the next couple of weeks?\\n I look forward to hearing from you!\\n YOURNAME, YOUREMAIL, YOURPHONE, YOURRESUMELINK\"\"\"",
+        "detail": "scripts.Untitled-1",
+        "documentation": {}
+    },
+    {
+        "label": "cold_outreach_to_company_director",
+        "kind": 5,
+        "importPath": "scripts.Untitled-1",
+        "description": "scripts.Untitled-1",
+        "peekOfCode": "cold_outreach_to_company_director = \"\"\"Hi NAME!\\n My name is YOURNAME and I am an aspiring JOBTITLE. As a longtime user of PRODUCT_YOU_BOTH_USE, I would love to hear about your day-to-day at THEIRCOMPANY and how the pandemic has impacted your research! Would you be free in the next 2 weeks to talk about your experience? Looking forward to connecting!\\n YOURNAME\"\"\"\nfollowup_after_event = \"\"\"Hello NAME,\\n It was great to meet you at EVENTNAME. I appreciated your insights into WHATYOUTALKEDABOUT. I would love to continue the conversation. Would you be open to coffee (my treat) or a quick phone call in the next couple of weeks?\\n I look forward to hearing from you!\\n YOURNAME, YOUREMAIL, YOURPHONE, YOURRESUMELINK\"\"\"",
+        "detail": "scripts.Untitled-1",
+        "documentation": {}
+    },
+    {
+        "label": "followup_after_event",
+        "kind": 5,
+        "importPath": "scripts.Untitled-1",
+        "description": "scripts.Untitled-1",
+        "peekOfCode": "followup_after_event = \"\"\"Hello NAME,\\n It was great to meet you at EVENTNAME. I appreciated your insights into WHATYOUTALKEDABOUT. I would love to continue the conversation. Would you be open to coffee (my treat) or a quick phone call in the next couple of weeks?\\n I look forward to hearing from you!\\n YOURNAME, YOUREMAIL, YOURPHONE, YOURRESUMELINK\"\"\"",
+        "detail": "scripts.Untitled-1",
+        "documentation": {}
+    }
+]

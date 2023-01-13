@@ -28,6 +28,23 @@
     },
     {
         "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
         "importPath": "datetime",
         "description": "datetime",
         "isExtraImport": true,
@@ -75,6 +92,22 @@
         "documentation": {}
     },
     {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "Keys",
+        "importPath": "selenium.webdriver.common.keys",
+        "description": "selenium.webdriver.common.keys",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.keys",
+        "documentation": {}
+    },
+    {
         "label": "Keys",
         "importPath": "selenium.webdriver.common.keys",
         "description": "selenium.webdriver.common.keys",
@@ -115,6 +148,14 @@
         "documentation": {}
     },
     {
+        "label": "WebDriverWait",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
         "label": "expected_conditions",
         "importPath": "selenium.webdriver.support",
         "description": "selenium.webdriver.support",
@@ -128,6 +169,22 @@
         "description": "selenium.webdriver.support",
         "isExtraImport": true,
         "detail": "selenium.webdriver.support",
+        "documentation": {}
+    },
+    {
+        "label": "expected_conditions",
+        "importPath": "selenium.webdriver.support",
+        "description": "selenium.webdriver.support",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
         "documentation": {}
     },
     {
@@ -187,6 +244,24 @@
         "documentation": {}
     },
     {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
         "label": "time",
         "kind": 6,
         "isExtraImport": true,
@@ -196,12 +271,12 @@
         "documentation": {}
     },
     {
-        "label": "random",
+        "label": "logging",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "random",
-        "description": "random",
-        "detail": "random",
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
         "documentation": {}
     },
     {
@@ -249,15 +324,6 @@
         "documentation": {}
     },
     {
-        "label": "re",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "re",
-        "description": "re",
-        "detail": "re",
-        "documentation": {}
-    },
-    {
         "label": "string",
         "kind": 6,
         "isExtraImport": true,
@@ -291,6 +357,15 @@
         "importPath": "traceback",
         "description": "traceback",
         "detail": "traceback",
+        "documentation": {}
+    },
+    {
+        "label": "pip",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pip",
+        "description": "pip",
+        "detail": "pip",
         "documentation": {}
     },
     {
@@ -354,6 +429,51 @@
         "description": "scripts.full_lamp_file",
         "peekOfCode": "country = config[\"country\"]\n# def mile_one():\n#     #* The Process Journey for each Company\n#     #& Mile One: Getting started with the hiring managers with selenium and python\n#     # Now we begin\n#     # We will be using selenium to automate the process of getting the hiring managers\n#     # We will be using python to write the code\n#     # We will be using chrome to run the code\n#     # We will be using the chrome driver to run the code\n#     # global variables and constants",
         "detail": "scripts.full_lamp_file",
+        "documentation": {}
+    },
+    {
+        "label": "url_clicks",
+        "kind": 5,
+        "importPath": "scripts.github_follower",
+        "description": "scripts.github_follower",
+        "peekOfCode": "url_clicks = {}\nwith open(\"../data/url_clicks.csv\", \"w\") as csv_file:\n    csv_file.write(\"URL,Clicks\\n\")\nwith open(\"../config/config.json\") as f:\n    data = json.load(f)\noptions = webdriver.ChromeOptions()\noptions.add_argument(\"--disable-extensions\")\n# options.add_argument('--headless')\n# options.add_argument('--disable-gpu')\noptions.add_argument(\"--no-sandbox\")",
+        "detail": "scripts.github_follower",
+        "documentation": {}
+    },
+    {
+        "label": "options",
+        "kind": 5,
+        "importPath": "scripts.github_follower",
+        "description": "scripts.github_follower",
+        "peekOfCode": "options = webdriver.ChromeOptions()\noptions.add_argument(\"--disable-extensions\")\n# options.add_argument('--headless')\n# options.add_argument('--disable-gpu')\noptions.add_argument(\"--no-sandbox\")\noptions.add_argument(\"start-maximized\")\noptions.add_argument(\"disable-infobars\")  # <--- Note the option\noptions.add_argument(\"--disable-dev-shm-usage\")  # <--- Note the option\noptions.add_argument(\"--remote-debugging-port=9222\")  # <--- Note the port\n# options.add_argument(f'user-data-dir={data[\"chrome_driver_path\"]}') # <--- Note the f-string",
+        "detail": "scripts.github_follower",
+        "documentation": {}
+    },
+    {
+        "label": "driver",
+        "kind": 5,
+        "importPath": "scripts.github_follower",
+        "description": "scripts.github_follower",
+        "peekOfCode": "driver = webdriver.Chrome(\n    executable_path=data[\"chrome_driver_path\"], chrome_options=options\n)\ndriver.get(\"https://www.github.com/login\")\nusername = WebDriverWait(driver, 10).until(\n    EC.presence_of_element_located((By.ID, \"login_field\"))\n)\npassword = WebDriverWait(driver, 10).until(\n    EC.presence_of_element_located((By.ID, \"password\"))\n)",
+        "detail": "scripts.github_follower",
+        "documentation": {}
+    },
+    {
+        "label": "username",
+        "kind": 5,
+        "importPath": "scripts.github_follower",
+        "description": "scripts.github_follower",
+        "peekOfCode": "username = WebDriverWait(driver, 10).until(\n    EC.presence_of_element_located((By.ID, \"login_field\"))\n)\npassword = WebDriverWait(driver, 10).until(\n    EC.presence_of_element_located((By.ID, \"password\"))\n)\nusername.send_keys(data[\"github_username\"])\ntime.sleep(random.randint(1, 5))\npassword.send_keys(data[\"github_password\"])\ntime.sleep(random.randint(1, 5))",
+        "detail": "scripts.github_follower",
+        "documentation": {}
+    },
+    {
+        "label": "password",
+        "kind": 5,
+        "importPath": "scripts.github_follower",
+        "description": "scripts.github_follower",
+        "peekOfCode": "password = WebDriverWait(driver, 10).until(\n    EC.presence_of_element_located((By.ID, \"password\"))\n)\nusername.send_keys(data[\"github_username\"])\ntime.sleep(random.randint(1, 5))\npassword.send_keys(data[\"github_password\"])\ntime.sleep(random.randint(1, 5))\npassword.send_keys(Keys.RETURN)\n# clear the log file\nopen(\"click.log\", \"w\").close()",
+        "detail": "scripts.github_follower",
         "documentation": {}
     },
     {
@@ -453,6 +573,87 @@
         "description": "scripts.linkedinparser_classapproach",
         "peekOfCode": "def main():  # main function\n    print(\"Beginning Process\")\n    parser = LinkedInParser(\n        username, password\n    )  # username and password are in secrets.json\n    print(\"Logged in\")\n    # * Trying the copilot_generated_function() function\n    copilot_generated_function()\n    # * Trying the copilot_generated_function() above\n    title = parser.loadTitle()  # load the title of the page",
         "detail": "scripts.linkedinparser_classapproach",
+        "documentation": {}
+    },
+    {
+        "label": "install",
+        "kind": 2,
+        "importPath": "scripts.touch_campaign",
+        "description": "scripts.touch_campaign",
+        "peekOfCode": "def install(package):\n    # install the package if it is not already installed\n    pip.main([\"install\", package])\n# install the necessary libraries\ninstall(\"schedule\")\ninstall(\"apscheduler\")\ninstall(\"beautifulsoup4\")\ninstall(\"requests\")\nimport apscheduler\nimport schedule",
+        "detail": "scripts.touch_campaign",
+        "documentation": {}
+    },
+    {
+        "label": "parse_html",
+        "kind": 2,
+        "importPath": "scripts.touch_campaign",
+        "description": "scripts.touch_campaign",
+        "peekOfCode": "def parse_html(html):\n    soup = BeautifulSoup(html, \"html.parser\")\n    return soup\n# Write the code to extract the relevant information from the LinkedIn profiles, such as job title, skills, and experience.\n# extracting the relevant information\ndef extract_info(soup):\n    try:\n        # extracting the job title\n        job_title = soup.find(\n            \"h2\", class_=\"mt1 t-18 t-black t-normal break-words\"",
+        "detail": "scripts.touch_campaign",
+        "documentation": {}
+    },
+    {
+        "label": "extract_info",
+        "kind": 2,
+        "importPath": "scripts.touch_campaign",
+        "description": "scripts.touch_campaign",
+        "peekOfCode": "def extract_info(soup):\n    try:\n        # extracting the job title\n        job_title = soup.find(\n            \"h2\", class_=\"mt1 t-18 t-black t-normal break-words\"\n        ).text.strip()\n    except:\n        job_title = \"\"\n    try:\n        # extracting the skills",
+        "detail": "scripts.touch_campaign",
+        "documentation": {}
+    },
+    {
+        "label": "create_message",
+        "kind": 2,
+        "importPath": "scripts.touch_campaign",
+        "description": "scripts.touch_campaign",
+        "peekOfCode": "def create_message(data):\n    message = (\n        \"Hi, I noticed that you are a \"\n        + data[\"job_title\"]\n        + \" and I am also a \"\n        + data[\"job_title\"]\n        + \". I have experience in \"\n        + \", \".join(data[\"skills\"][:3])\n        + \". I would love to connect with you to learn more about your experience as a \"\n        + data[\"job_title\"]",
+        "detail": "scripts.touch_campaign",
+        "documentation": {}
+    },
+    {
+        "label": "send_message",
+        "kind": 2,
+        "importPath": "scripts.touch_campaign",
+        "description": "scripts.touch_campaign",
+        "peekOfCode": "def send_message(message):\n    # code to send the message\n    pass\n# Use the schedule or apscheduler library to schedule the sending of the template messages to the contacts on your list.\n# scheduling the messages\ndef schedule_message(message):\n    schedule.every().day.at(\"10:30\").do(\n        send_message, message=message\n    )  # send the message at 10:30 am every day\n    while True:",
+        "detail": "scripts.touch_campaign",
+        "documentation": {}
+    },
+    {
+        "label": "schedule_message",
+        "kind": 2,
+        "importPath": "scripts.touch_campaign",
+        "description": "scripts.touch_campaign",
+        "peekOfCode": "def schedule_message(message):\n    schedule.every().day.at(\"10:30\").do(\n        send_message, message=message\n    )  # send the message at 10:30 am every day\n    while True:\n        schedule.run_pending()\n        time.sleep(1)\n# Write the code to automate the process of adding contacts to your list.\n# automating the process of adding contacts to the list using web scraping\ndef add_contacts():",
+        "detail": "scripts.touch_campaign",
+        "documentation": {}
+    },
+    {
+        "label": "add_contacts",
+        "kind": 2,
+        "importPath": "scripts.touch_campaign",
+        "description": "scripts.touch_campaign",
+        "peekOfCode": "def add_contacts():\n    # code to scrape the contacts from the website\n    pass\n# Write the code to automate the process of removing contacts from your list.\n# automating the process of removing contacts from the list\ndef remove_contacts():\n    # code to remove the contacts from the list\n    pass\n# * Write a function that adds the messages that are scheduled as reminders to your calendar (if you use Google Calendar, you can use the Google Calendar API to do this) Also could be done with iCal.\n# adding the messages to the calendar",
+        "detail": "scripts.touch_campaign",
+        "documentation": {}
+    },
+    {
+        "label": "remove_contacts",
+        "kind": 2,
+        "importPath": "scripts.touch_campaign",
+        "description": "scripts.touch_campaign",
+        "peekOfCode": "def remove_contacts():\n    # code to remove the contacts from the list\n    pass\n# * Write a function that adds the messages that are scheduled as reminders to your calendar (if you use Google Calendar, you can use the Google Calendar API to do this) Also could be done with iCal.\n# adding the messages to the calendar\ndef add_to_calendar(message, date):\n    # code to add the message to the calendar\n    pass\n# Implement the function to send a \"thank you\" message or email after each informational interview.\n# Test the script with a small set of sample data to ensure that the messages are being sent correctly and at the appropriate time.",
+        "detail": "scripts.touch_campaign",
+        "documentation": {}
+    },
+    {
+        "label": "add_to_calendar",
+        "kind": 2,
+        "importPath": "scripts.touch_campaign",
+        "description": "scripts.touch_campaign",
+        "peekOfCode": "def add_to_calendar(message, date):\n    # code to add the message to the calendar\n    pass\n# Implement the function to send a \"thank you\" message or email after each informational interview.\n# Test the script with a small set of sample data to ensure that the messages are being sent correctly and at the appropriate time.\n# Debug and troubleshoot any errors that may arise during the testing process.\n# Optimize the script for performance, readability and maintainability.\n# Once the script is working properly, it can be used on a larger scale and can also be integrated with other tools like google calendar, etc.\n# It's important to keep in mind that building a script like this will require knowledge of Python, HTML, and web scraping. If you're not comfortable with these technologies, consider seeking help from someone who has experience in these areas.",
+        "detail": "scripts.touch_campaign",
         "documentation": {}
     }
 ]

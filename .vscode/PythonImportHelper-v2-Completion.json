@@ -1,0 +1,458 @@
+[
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "BeautifulSoup",
+        "importPath": "bs4",
+        "description": "bs4",
+        "isExtraImport": true,
+        "detail": "bs4",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "Keys",
+        "importPath": "selenium.webdriver.common.keys",
+        "description": "selenium.webdriver.common.keys",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.keys",
+        "documentation": {}
+    },
+    {
+        "label": "Options",
+        "importPath": "selenium.webdriver.chrome.options",
+        "description": "selenium.webdriver.chrome.options",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.chrome.options",
+        "documentation": {}
+    },
+    {
+        "label": "WebDriverWait",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "Select",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "WebDriverWait",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "expected_conditions",
+        "importPath": "selenium.webdriver.support",
+        "description": "selenium.webdriver.support",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support",
+        "documentation": {}
+    },
+    {
+        "label": "expected_conditions",
+        "importPath": "selenium.webdriver.support",
+        "description": "selenium.webdriver.support",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "ActionChains",
+        "importPath": "selenium.webdriver.common.action_chains",
+        "description": "selenium.webdriver.common.action_chains",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.action_chains",
+        "documentation": {}
+    },
+    {
+        "label": "DesiredCapabilities",
+        "importPath": "selenium.webdriver.common.desired_capabilities",
+        "description": "selenium.webdriver.common.desired_capabilities",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.desired_capabilities",
+        "documentation": {}
+    },
+    {
+        "label": "Proxy",
+        "importPath": "selenium.webdriver.common.proxy",
+        "description": "selenium.webdriver.common.proxy",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.proxy",
+        "documentation": {}
+    },
+    {
+        "label": "ProxyType",
+        "importPath": "selenium.webdriver.common.proxy",
+        "description": "selenium.webdriver.common.proxy",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.proxy",
+        "documentation": {}
+    },
+    {
+        "label": "Alert",
+        "importPath": "selenium.webdriver.common.alert",
+        "description": "selenium.webdriver.common.alert",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.alert",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "ElementClickInterceptedException",
+        "importPath": "selenium.common.exceptions",
+        "description": "selenium.common.exceptions",
+        "isExtraImport": true,
+        "detail": "selenium.common.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "http.cookiejar",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "http.cookiejar",
+        "description": "http.cookiejar",
+        "detail": "http.cookiejar",
+        "documentation": {}
+    },
+    {
+        "label": "urllib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib",
+        "description": "urllib",
+        "detail": "urllib",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "string",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "string",
+        "description": "string",
+        "detail": "string",
+        "documentation": {}
+    },
+    {
+        "label": "urllib.request",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.request",
+        "description": "urllib.request",
+        "detail": "urllib.request",
+        "documentation": {}
+    },
+    {
+        "label": "httplib2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "httplib2",
+        "description": "httplib2",
+        "detail": "httplib2",
+        "documentation": {}
+    },
+    {
+        "label": "traceback",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "traceback",
+        "description": "traceback",
+        "detail": "traceback",
+        "documentation": {}
+    },
+    {
+        "label": "apscheduler",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "apscheduler",
+        "description": "apscheduler",
+        "detail": "apscheduler",
+        "documentation": {}
+    },
+    {
+        "label": "schedule",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "schedule",
+        "description": "schedule",
+        "detail": "schedule",
+        "documentation": {}
+    },
+    {
+        "label": "harvest",
+        "kind": 2,
+        "importPath": "scripts.full_lamp_file",
+        "description": "scripts.full_lamp_file",
+        "peekOfCode": "def harvest(company_url, lamp_df):\n    # request the company url as html with requests and beautiful soup\n    company_url_html = requests.get(company_url).text  # request the company url as html\n    soup = BeautifulSoup(\n        company_url_html, \"html.parser\"\n    )  # parse the html with beautiful soup\n    # use the patterns to get the hiring manager names and emails\n    # linkedin_url2 pattern in url_patterns.json is useful for finding recruiting managers\n    # targeted_search_linkedin_001 - explaining this pattern.\n    # looks for people at the company provided with  .format(company name) that are 1st or 2nd degree connections of the user.",
+        "detail": "scripts.full_lamp_file",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "scripts.full_lamp_file",
+        "description": "scripts.full_lamp_file",
+        "peekOfCode": "def main():\n    return",
+        "detail": "scripts.full_lamp_file",
+        "documentation": {}
+    },
+    {
+        "label": "city",
+        "kind": 5,
+        "importPath": "scripts.full_lamp_file",
+        "description": "scripts.full_lamp_file",
+        "peekOfCode": "city = config[\"city\"]\nstate = config[\"state\"]\ncountry = config[\"country\"]\n# def mile_one():\n#     #* The Process Journey for each Company\n#     #& Mile One: Getting started with the hiring managers with selenium and python\n#     # Now we begin\n#     # We will be using selenium to automate the process of getting the hiring managers\n#     # We will be using python to write the code\n#     # We will be using chrome to run the code",
+        "detail": "scripts.full_lamp_file",
+        "documentation": {}
+    },
+    {
+        "label": "state",
+        "kind": 5,
+        "importPath": "scripts.full_lamp_file",
+        "description": "scripts.full_lamp_file",
+        "peekOfCode": "state = config[\"state\"]\ncountry = config[\"country\"]\n# def mile_one():\n#     #* The Process Journey for each Company\n#     #& Mile One: Getting started with the hiring managers with selenium and python\n#     # Now we begin\n#     # We will be using selenium to automate the process of getting the hiring managers\n#     # We will be using python to write the code\n#     # We will be using chrome to run the code\n#     # We will be using the chrome driver to run the code",
+        "detail": "scripts.full_lamp_file",
+        "documentation": {}
+    },
+    {
+        "label": "country",
+        "kind": 5,
+        "importPath": "scripts.full_lamp_file",
+        "description": "scripts.full_lamp_file",
+        "peekOfCode": "country = config[\"country\"]\n# def mile_one():\n#     #* The Process Journey for each Company\n#     #& Mile One: Getting started with the hiring managers with selenium and python\n#     # Now we begin\n#     # We will be using selenium to automate the process of getting the hiring managers\n#     # We will be using python to write the code\n#     # We will be using chrome to run the code\n#     # We will be using the chrome driver to run the code\n#     # global variables and constants",
+        "detail": "scripts.full_lamp_file",
+        "documentation": {}
+    },
+    {
+        "label": "detect_confirm_button",
+        "kind": 2,
+        "importPath": "scripts.linkedin_automation",
+        "description": "scripts.linkedin_automation",
+        "peekOfCode": "def detect_confirm_button(driver):\n    try:\n        # detect the confirm button and click it\n        driver.find_element_by_css_selector(\n            \".artdeco-modal__confirm-dialog-btn\"\n        ).click()\n        return True\n    except:\n        return False\ndef login(secrets):",
+        "detail": "scripts.linkedin_automation",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "scripts.linkedin_automation",
+        "description": "scripts.linkedin_automation",
+        "peekOfCode": "def login(secrets):\n    # login to LinkedIn\n    driver = webdriver.Chrome()\n    # Login to LinkedIn\n    driver.get(\"https://www.linkedin.com/login\")\n    time.sleep(random.randint(1, 3))  # sleep for 1 to 3 seconds\n    # Getting the login element\n    username = driver.find_element_by_css_selector(\"#username\")\n    # retrieve the username from secrets.json\n    username_cred = secrets[\"username\"]",
+        "detail": "scripts.linkedin_automation",
+        "documentation": {}
+    },
+    {
+        "label": "harvest",
+        "kind": 2,
+        "importPath": "scripts.linkedin_automation",
+        "description": "scripts.linkedin_automation",
+        "peekOfCode": "def harvest(company_url, lamp_df, driver, url_patterns):\n    # we are logged in to LinkedIn at this point\n    # get the company page\n    \"\"\"\n    harvest the company page for the company_url provided and update the lamp_df dataframe with the results, which should be the information for the hiring managers at the company as listed on the company page (company_url).\n    :param company_url: the url for the company page\n    :type company_url: str\n    :param lamp_df: the dataframe to update with the results\n    :type lamp_df: pandas.DataFrame\n    :param driver: the selenium driver",
+        "detail": "scripts.linkedin_automation",
+        "documentation": {}
+    },
+    {
+        "label": "fill_lamp_list",
+        "kind": 2,
+        "importPath": "scripts.linkedin_automation",
+        "description": "scripts.linkedin_automation",
+        "peekOfCode": "def fill_lamp_list():\n    # get the top 10 companies from the populated lamp_list list.\n    # check if the lamp_list file exists\n    if os.path.exists(\"./data/lamp_list.csv\"):  # check if the file exists\n        lamp_list = pd.read_csv(\"./data/lamp_list.csv\")\n        lamp_list = lamp_list.head(10)\n    else:  # if the file does not exist, create it\n        print(\"Time to choose some companies to target!\")\n        # ask the user to choose some companies to target, one by one\n        while len(lamp_list) != 10:",
+        "detail": "scripts.linkedin_automation",
+        "documentation": {}
+    },
+    {
+        "label": "process_flow",
+        "kind": 2,
+        "importPath": "scripts.linkedin_automation",
+        "description": "scripts.linkedin_automation",
+        "peekOfCode": "def process_flow():\n    \"\"\"\n    process_flow is the main function that runs the process flow\n    :return: None\n    :rtype: None\n    \"\"\"\n    print(\"Starting the process flow\")\n    # load your credentials from secrets.json in the config folder\n    with open(\"./config/secrets.json\", encoding=\"utf-8\") as f:\n        secrets = json.load(f)",
+        "detail": "scripts.linkedin_automation",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "scripts.linkedin_automation",
+        "description": "scripts.linkedin_automation",
+        "peekOfCode": "def main():\n    lamp_df = process_flow()  # run the process flow\n    return lamp_df\nif __name__ == \"__main__\":\n    main()",
+        "detail": "scripts.linkedin_automation",
+        "documentation": {}
+    },
+    {
+        "label": "connect_mode",
+        "kind": 5,
+        "importPath": "scripts.linkedin_automation",
+        "description": "scripts.linkedin_automation",
+        "peekOfCode": "connect_mode = False\ndef detect_confirm_button(driver):\n    try:\n        # detect the confirm button and click it\n        driver.find_element_by_css_selector(\n            \".artdeco-modal__confirm-dialog-btn\"\n        ).click()\n        return True\n    except:\n        return False",
+        "detail": "scripts.linkedin_automation",
+        "documentation": {}
+    },
+    {
+        "label": "LinkedInParser",
+        "kind": 6,
+        "importPath": "scripts.linkedinparser_classapproach",
+        "description": "scripts.linkedinparser_classapproach",
+        "peekOfCode": "class LinkedInParser(object):  # class for parsing\n    # docstring\n    \"\"\"docstring for LinkedInParser\"\"\"\n    def __init__(self, login, password):\n        \"\"\"Start up...\"\"\"\n        self.login = login\n        self.password = password\n        self.logged_in = False\n        self.opener = None\n        self.cookie_jar = None",
+        "detail": "scripts.linkedinparser_classapproach",
+        "documentation": {}
+    },
+    {
+        "label": "copilot_generated_function",
+        "kind": 2,
+        "importPath": "scripts.linkedinparser_classapproach",
+        "description": "scripts.linkedinparser_classapproach",
+        "peekOfCode": "def copilot_generated_function():\n    cookie_filename = \"./src/parser.cookies.txt\"\n    # create a cookie jar\n    cookie_jar = cookielib.LWPCookieJar(cookie_filename)\n    # if the cookie file exists, load the cookies into the Cookie Jar\n    if os.path.isfile(cookie_filename):  # if the cookie file exists\n        cookie_jar.load(ignore_discard=True)  # load the cookies from the file\n    # create an opener to open pages using the http protocol and to process cookies.\n    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cookie_jar))\n    # add our headers",
+        "detail": "scripts.linkedinparser_classapproach",
+        "documentation": {}
+    },
+    {
+        "label": "perform_inner_actions",
+        "kind": 2,
+        "importPath": "scripts.linkedinparser_classapproach",
+        "description": "scripts.linkedinparser_classapproach",
+        "peekOfCode": "def perform_inner_actions(url, filename):\n    # now that we have the initial cookies set up, we can access authenticated pages\n    hiring_manager_profiles = []\n    # what have we done in this function?\n    # \"https://www.linkedin.com/feed/\"\n    # read the response\n    # contents = resp.read()\n    # if not os.path.exists('./data'): # if the data folder does not exist\n    #     os.makedirs('./data') # make the data folder\n    # with open('./data/test.html', 'wb') as f: # write the contents to a file",
+        "detail": "scripts.linkedinparser_classapproach",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "scripts.linkedinparser_classapproach",
+        "description": "scripts.linkedinparser_classapproach",
+        "peekOfCode": "def main():  # main function\n    print(\"Beginning Process\")\n    parser = LinkedInParser(\n        username, password\n    )  # username and password are in secrets.json\n    print(\"Logged in\")\n    # * Trying the copilot_generated_function() function\n    copilot_generated_function()\n    # * Trying the copilot_generated_function() above\n    title = parser.loadTitle()  # load the title of the page",
+        "detail": "scripts.linkedinparser_classapproach",
+        "documentation": {}
+    }
+]
